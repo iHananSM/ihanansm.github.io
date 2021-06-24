@@ -1,0 +1,34 @@
+title: Hanan S. M
+author: Hanan
+email: hmurayshed@gmail.com
+description: >
+  MSc. CS Student • AI Researcher • NLP
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-redirect-from
+
+minima_reboot:
+  date_format: "%b %-d, %Y"
+  date_format_short: "%b %-d"
+
+header_pages:
+- about.md
+- posts.md
+- github.md
+
+footer_icons:
+- username: ihanansm/
+  url: https://github.com/ihanansm/
+  #icon: icon-github.svg
+
+paginate: 5
+
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - minima-reboot.gemspec
