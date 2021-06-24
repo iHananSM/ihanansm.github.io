@@ -8,11 +8,15 @@ layout: default
 
 <div id="content">
 
-  {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
+  {% assign items_grouped = paginator.posts | group_by: 'ref'%}
+{% for group in items_grouped%}
+    {% if group.items.size> 1%}
+        {% assign post = group.items | where: "lang", page.lang | first%}
+    {% else%}
+        {% assign post = group.items [0]%}
+    {% endif%}
+    {% include archive-single.html%}
+{% endfor%}
 
   <ul class="list-unstyled m-0">
     {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
