@@ -1,5 +1,4 @@
 url: ihanansm.github.io
-baseurl: /ihanansm
 title: Hanan S. M
 author: Hanan
 email: hmurayshed@gmail.com
@@ -22,7 +21,7 @@ header_pages:
 - github.md
 
 footer_icons:
-- username: ihanansm/
+- username: ihanansm
   url: https://github.com/ihanansm/
   #icon: icon-github.svg
 
