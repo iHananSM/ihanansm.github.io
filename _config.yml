@@ -1,6 +1,5 @@
 url: ihanansm.github.io
-baseurl: ihanansm
-title: Hanan S. M
+baseurl: /ihanansm
 email: hmurayshed@gmail.com
 description: >
   MSc. CS Student • AI Researcher • NLP
@@ -21,7 +20,7 @@ header_pages:
 - github.md
 
 footer_icons:
-- username: ihanansm
+- username: ihanansm/
   url: https://github.com/ihanansm/
   #icon: icon-github.svg
 
