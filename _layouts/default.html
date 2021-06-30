@@ -1,31 +1,51 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+{% include head.html %}
 
-  <head>
-    {% include head.html %}
-    {% include scripts/mathjax.html %}
-  </head>
+<body>
+  
+  <main role="main">
+    {% include anchor_headings.html html=content anchorBody="#" %}
+  </main>
 
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  
+  <script type="text/javascript">
+    function setTheme(theme) {
+      if (theme === "dark") {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        window.localStorage.setItem('theme', 'dark');
+        document.getElementById("theme-toggle").classList.add('sun');
+        document.getElementById("theme-toggle").classList.remove('moon');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        window.localStorage.setItem('theme', 'light');
+        document.getElementById("theme-toggle").classList.add('moon');
+        document.getElementById("theme-toggle").classList.remove('sun');
+      }
+    }
 
-    <!-- Header -->
+    let theme = localStorage.getItem('theme');
 
-    {% include header.html %}
+    theme = theme || (window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : 'light');
+    
+    setTheme(theme);
 
-    <!-- Content -->
+    function modeSwitcher() {
+      let currentMode = document.documentElement.getAttribute('data-theme');
 
-    <div class="container mt-5">
-      {{ content }}
-    </div>
+      if (currentMode === "dark") {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    }
+  </script>
 
-    <!-- Footer -->
-
-    {% include footer.html %}
-
-  </body>
-
-  {% include scripts/bootstrap.html %}
-  {% include scripts/mansory.html %}
-  {% include scripts/misc.html %}
+  
+</body>
 
 </html>
