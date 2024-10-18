@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2015-00-00 00:00:00-0400
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+Participated and reached the final nominations (3rd) over KSA level on Mawhiba’s National Olympiad Competition for Scientific Creativity (Research Track) by a research "A New Way to Solve The Equations System of First Degree with Two Variables"
